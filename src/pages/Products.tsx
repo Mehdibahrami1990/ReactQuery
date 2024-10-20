@@ -7,6 +7,7 @@ const Products = () => {
   const {
     data: products,
     isLoading,
+    isFetching,
     isError,
     error,
   } = useQuery({
@@ -15,6 +16,8 @@ const Products = () => {
       await Sleep(2000);
       return fetchProducts();
     },
+
+
   });
 
   //   const [isLoading, setIsLoading] = useState(false);
@@ -29,6 +32,7 @@ const Products = () => {
   //     };
   //     callToApi();
   //   }, []);
+  console.log("isLoading", isLoading, "isFetching", isFetching);
   const renderProducts = useMemo(() => {
     if (products) {
       return products.map((product) => {
@@ -45,7 +49,7 @@ const Products = () => {
     return null;
   }, [products]);
   if (isError) {
-    console.log(error)
+    console.log(error);
     return (
       <div>
         <p className="t">Some error happened</p>
