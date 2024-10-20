@@ -7,7 +7,15 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "./App.css";
 
 function App() {
-  const client = new QueryClient();
+  const client = new QueryClient(
+  //   {
+  //   defaultOptions: {
+  //     queries: {
+  //       cacheTime: 2000, // 24 hours
+  //     },
+  //   },
+  // }
+);
 
   return (
     <QueryClientProvider client={client}>

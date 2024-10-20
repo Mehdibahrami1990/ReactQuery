@@ -16,8 +16,6 @@ const Products = () => {
       await Sleep(2000);
       return fetchProducts();
     },
-
-
   });
 
   //   const [isLoading, setIsLoading] = useState(false);
